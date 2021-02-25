@@ -143,6 +143,6 @@ variable "master_jvm_memory_pressure_threshold" {
 
 variable "treat_missing_data" {
   description = "treat_missing_data"
-  type        = "string"
+  type        = string
   default     = "ignore"
 }
