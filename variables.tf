@@ -139,6 +139,10 @@ variable "master_jvm_memory_pressure_threshold" {
   description = "The maximum percentage of the Java heap used for master nodes in the cluster"
   type        = number
   default     = 80 # default same as `jvm_memory_pressure_threshold` in Percentage
+}
 
-
+variable "treat_missing_data" {
+  description = "treat_missing_data"
+  type        = "string"
+  default     = "ignore"
 }
