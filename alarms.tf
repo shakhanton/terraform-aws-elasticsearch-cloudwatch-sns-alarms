@@ -148,6 +148,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
   alarm_description   = "Average elasticsearch cluster CPU utilization over last 45 minutes too high"
   alarm_actions       = [local.aws_sns_topic_arn]
   ok_actions          = [local.aws_sns_topic_arn]
+  treat_missing_data  = var.treat_missing_data
 
   dimensions = {
     DomainName = var.domain_name
@@ -168,6 +169,7 @@ resource "aws_cloudwatch_metric_alarm" "jvm_memory_pressure_too_high" {
   alarm_description   = "Elasticsearch JVM memory pressure is too high over last 15 minutes"
   alarm_actions       = [local.aws_sns_topic_arn]
   ok_actions          = [local.aws_sns_topic_arn]
+  treat_missing_data  = var.treat_missing_data
 
   dimensions = {
     DomainName = var.domain_name
@@ -188,6 +190,7 @@ resource "aws_cloudwatch_metric_alarm" "master_cpu_utilization_too_high" {
   alarm_description   = "Average elasticsearch cluster CPU utilization over last 45 minutes too high"
   alarm_actions       = [local.aws_sns_topic_arn]
   ok_actions          = [local.aws_sns_topic_arn]
+  treat_missing_data  = var.treat_missing_data
 
   dimensions = {
     DomainName = var.domain_name
@@ -208,6 +211,7 @@ resource "aws_cloudwatch_metric_alarm" "master_jvm_memory_pressure_too_high" {
   alarm_description   = "Elasticsearch JVM memory pressure is too high over last 15 minutes"
   alarm_actions       = [local.aws_sns_topic_arn]
   ok_actions          = [local.aws_sns_topic_arn]
+  treat_missing_data  = var.treat_missing_data
 
   dimensions = {
     DomainName = var.domain_name
